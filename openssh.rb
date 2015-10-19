@@ -33,6 +33,12 @@ class Openssh < Formula
       mirror "https://trac.macports.org/export/138238/trunk/dports/net/openssh/files/launchd.patch"
       sha256 "012ee24bf0265dedd5bfd2745cf8262c3240a6d70edcd555e5b35f99ed070590"
     end
+
+    # Port Apple's -l option to allow ssh-agent to be used as a LaunchAgent
+    patch do
+      url "https://gist.githubusercontent.com/jryans/2488ca4ab2bc9b4eeb54/raw/29513c4872c289285ca2f49f1ce0fd6e39cbcbc0/openssh-launchagent.patch"
+      sha256 "74b45296e12c001bda402572eecbea9b6dde7f37e0eaa35a7dfe27ffb8291408"
+    end
   end
 
   def install
